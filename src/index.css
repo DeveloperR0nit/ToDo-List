@@ -6,6 +6,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 :root {
@@ -94,6 +95,14 @@ header {
 
 .nav-logo {
   display: inline-block;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  color: white;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-weight: 700;
+  line-height: calc(24 / 16);
 }
 
 .nav-logo img {
@@ -776,7 +785,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   /* Status Card */
 
   .status-card {
-    padding: 12px;
+    padding: 12px 12px 6px;
   }
   .status-card .card-title {
     font-size: 10px;
@@ -841,6 +850,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
   /* Tasks List */
 
+  .error-msg {
+    font-size: 20px;
+  }
   .tasks-heading svg {
     margin-right: 6px;
   }

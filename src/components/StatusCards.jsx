@@ -12,6 +12,13 @@ import {
 
 export default function StatusCards() {
   const { statsObj, data } = useContext(TaskContext);
+  function calcCompletedCount() {
+    if (data.length === 0) return 0;
+    else
+      return Math.round(
+        (statsObj.completedTasksList.length * 100) / data.length,
+      );
+  }
   return (
     <div className="row status-cards">
       <StatusCard
@@ -47,8 +54,8 @@ export default function StatusCards() {
         svg={<BadgeCheck />}
         countDesc="resolved"
         smallSvg={<CircleCheckBig />}
-        bottomLeftText={`${Math.round((statsObj.completedTasksList.length * 100) / data.length)}% completion rate`}
-        bottomLeftTextSm={`${Math.round((statsObj.completedTasksList.length * 100) / data.length)}% done`}
+        bottomLeftText={`${calcCompletedCount()}% completion rate`}
+        bottomLeftTextSm={`${calcCompletedCount()}% done`}
         bottomRightText="Great work!"
         color="78, 288, 163"
         value={statsObj.completedTasksList.length}

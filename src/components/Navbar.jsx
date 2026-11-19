@@ -6,6 +6,7 @@ export default function Navbar() {
     <header>
       <a className="nav-logo" href="/">
         <img src={navLogo} alt="nav logo here" />
+        TaskFlow
       </a>
       <button>
         <svg
