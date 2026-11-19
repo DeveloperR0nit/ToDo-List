@@ -156,15 +156,30 @@ aside h3 {
   font-size: 14px;
   font-weight: 500;
   transition: 0.3s ease all;
+  margin-bottom: 5px;
+}
+.aside-btn:hover {
+  background-color: #8083ff;
+  color: #1000a9 !important;
 }
 .aside-btn.active {
   background-color: #8083ff;
   color: #1000a9 !important;
 }
+.aside-btn:hover span,
+.aside-btn.danger:hover span {
+  color: #1000a9;
+  font-weight: 600;
+}
 .aside-btn.active span,
 .aside-btn.active.danger span {
   color: #1000a9;
   font-weight: 600;
+}
+.aside-btn:hover div,
+.aside-btn.danger:hover div {
+  background-color: #6969ee;
+  color: #1000a9 !important;
 }
 .aside-btn.active div,
 .aside-btn.active.danger div {
@@ -253,6 +268,10 @@ aside .count-box {
   position: relative;
   border: 2px solid #162538;
   height: 100%;
+  transition: 0.3s ease;
+}
+.status-card:hover {
+  border: 2px solid #ffffff28;
 }
 .status-card .blur {
   position: absolute;
@@ -326,6 +345,10 @@ aside .count-box {
   border: 2px solid #18273b;
   border-radius: 16px;
   margin-bottom: 32px;
+  transition: 0.3s ease;
+}
+.search-bar-wrapper:hover {
+  border: 2px solid #ffffff28;
 }
 .search-bar {
   background: #000f21;
@@ -395,6 +418,16 @@ aside .count-box {
   align-items: center;
   margin-bottom: 12px;
   position: relative;
+  transition: 0.3s ease all;
+}
+.task-box:hover {
+  border: 2px solid #ffffff28;
+}
+.task-box.overdue {
+  border: 2px solid #6f434c;
+}
+.task-box.overdue:hover {
+  border: 2px solid #321223;
 }
 .task-box.completed {
   opacity: 0.5;
@@ -581,6 +614,11 @@ input[type="checkbox"]:checked::after {
   cursor: pointer;
   color: #94a3b8;
   font-size: 28px;
+  transition: 0.3s ease;
+}
+.modal-wrapper .close-btn:hover {
+  color: white;
+  transform: scale(1.1);
 }
 .modal-form label {
   font-size: 12px;
@@ -606,6 +644,11 @@ input[type="checkbox"]:checked::after {
   line-height: calc(20 / 14);
   margin-bottom: 16px;
   font-family: "Plus Jakarta Sans", sans-serif;
+  transition: 0.3s ease;
+}
+.modal-form input:focus,
+.modal-form textarea:focus {
+  border: 1px solid #ffffff4b;
 }
 .modal-form input[type="date"] {
   margin-bottom: 0;
@@ -652,6 +695,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border-radius: 8px;
   cursor: pointer;
   width: 100%;
+  transition: 0.3s ease;
+}
+.modal-form .date-btn:hover {
+  border: 1px solid #ffffff4b;
 }
 .modal-form .bottom-row {
   display: flex;
@@ -669,6 +716,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .modal-form .bottom-row .clear-btn {
   color: #94a3b8;
   border: none;
+  transition: 0.3s ease;
+}
+.modal-form .bottom-row .clear-btn:hover {
+  color: white;
 }
 .modal-form .bottom-row .right-btns {
   display: flex;
@@ -786,12 +837,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
   .status-card {
     padding: 12px 12px 6px;
-  }
-  .status-card .card-title {
-    font-size: 10px;
+    background: linear-gradient(to right, #0b1c30, #000f21);
   }
   .status-card .blur {
     display: none;
+  }
+  .status-card .card-title {
+    font-size: 10px;
   }
   .status-card .card-top .svg-wrapper {
     padding: 0;
@@ -822,6 +874,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .aside-btn {
     padding: 6px 12px;
     font-size: 12px;
+    margin-bottom: 0;
   }
   .aside-btn svg {
     margin-right: 6px;
@@ -858,6 +911,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
   .task-box {
     padding: 14px;
+    background: linear-gradient(to right, rgba(11, 28, 48, 0.95), #000f21);
   }
   .task-box input[type="checkbox"] {
     margin-right: 12px;

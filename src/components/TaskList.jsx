@@ -85,7 +85,7 @@ export default function Tasklist() {
     displayedTasks.length !== 0 ? (
       displayedTasks.map((task) => (
         <div
-          className={`task-box ${task.isCompleted ? "completed" : ""}`}
+          className={`task-box ${task.isCompleted ? "completed" : ""} ${getDueStatusSmall(task.date, task.isCompleted) === "overdue" ? "overdue" : ""}`}
           key={task.id}
         >
           <input
