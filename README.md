@@ -15,7 +15,8 @@ A modern and intuitive To-Do List application built with **React** and **Vite** 
 - **Smart Filtering** – Organize tasks based on their status and due dates.
 - **Due Date Tracking** – Identify overdue, due today, and upcoming tasks.
 - **Sidebar Navigation** – Navigate between different task categories.
-- **Responsive Interface** – A clean interface designed for easy task management.
+- **Responsive Interface** – A clean interface designed for easy task management and for a seamless experience across different screen sizes and devices.
+- **Theme Switching** – Switch between Light and Dark themes according to your preference.
 
 ## Tech Stack
 
@@ -79,12 +80,12 @@ src/
 
 ## Available Scripts
 
-| Command | Description |
-|---|---|
-| `npm run dev` | Start development server |
-| `npm run build` | Build for production |
+| Command           | Description              |
+| ----------------- | ------------------------ |
+| `npm run dev`     | Start development server |
+| `npm run build`   | Build for production     |
 | `npm run preview` | Preview production build |
-| `npm run lint` | Run ESLint |
+| `npm run lint`    | Run ESLint               |
 
 ## Future Improvements
 
