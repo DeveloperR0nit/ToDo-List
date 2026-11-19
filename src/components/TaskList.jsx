@@ -16,10 +16,6 @@ export default function Tasklist() {
     statsObj,
     searchFilter,
   } = useContext(TaskContext);
-  function handleDelete(id) {
-    const filteredTasks = data.filter((e) => e.id !== id);
-    setNewData(filteredTasks);
-  }
   function handleColmpletedCheck(e, id) {
     const updatedData = data.map((task) =>
       task.id === id ? { ...task, isCompleted: e.target.checked } : task,
@@ -61,21 +57,33 @@ export default function Tasklist() {
       day: "numeric",
     });
   }
-  const filteredStatsData = data.filter((task) =>
-    statsObj[sideBarActive + "TasksList"].includes(task.id),
-  );
-  const filteredSearchData =
-    filteredStatsData !== ""
-      ? filteredStatsData.filter(
-          (task) =>
-            task.title.includes(searchFilter) ||
-            task.description.includes(searchFilter) ||
-            task.date.includes(searchFilter),
-        )
-      : filteredStatsData;
+  function displayData() {
+    const filteredStatsData = data.filter((task) =>
+      statsObj[sideBarActive + "TasksList"].includes(task.id),
+    );
+    const filteredSearchData =
+      filteredStatsData !== ""
+        ? filteredStatsData.filter(
+            (task) =>
+              task.title.includes(searchFilter) ||
+              task.description.includes(searchFilter) ||
+              task.date.includes(searchFilter),
+          )
+        : filteredStatsData;
+
+    let notCompletedArray = filteredSearchData.filter(
+      (task) => !task.isCompleted,
+    );
+    notCompletedArray.sort((a, b) => new Date(a.date) - new Date(b.date));
+    let completedArray = filteredSearchData.filter((task) => task.isCompleted);
+    completedArray.sort((a, b) => new Date(a.date) - new Date(b.date));
+    const finalData = [...notCompletedArray, ...completedArray];
+    return finalData;
+  }
+  const displayedTasks = displayData();
   const AllTasks =
-    filteredSearchData.length !== 0 ? (
-      filteredSearchData.toReversed().map((task) => (
+    displayedTasks.length !== 0 ? (
+      displayedTasks.map((task) => (
         <div
           className={`task-box ${task.isCompleted ? "completed" : ""}`}
           key={task.id}
@@ -111,7 +119,10 @@ export default function Tasklist() {
             >
               <MdOutlineEdit />
             </button>
-            <button className="delete" onClick={() => handleDelete(task.id)}>
+            <button
+              className="delete"
+              onClick={() => setNewData(data.filter((e) => e.id !== task.id))}
+            >
               <RiDeleteBin6Line />
             </button>
           </div>
@@ -120,13 +131,15 @@ export default function Tasklist() {
     ) : searchFilter ? (
       <h2 className="error-msg">No Tasks found! 😊</h2>
     ) : (
-      <h2 className="error-msg">No Tasks to do. Take a Chill-Pill 😎 or add Tasks</h2>
+      <h2 className="error-msg">
+        No Tasks. Take a Chill-Pill 😎
+      </h2>
     );
   return (
     <>
       <div className="tasks-heading">
         <span>
-          Showing {filteredSearchData.length} of {data.length} tasks
+          Showing {displayedTasks.length} of {data.length} tasks
         </span>
         <span className="right">
           {" "}

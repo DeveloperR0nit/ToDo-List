@@ -13,7 +13,6 @@ export default function TaskModal({ isOpen, closeModal }) {
         date: "",
       },
   );
-  console.log(inputValues);
   function addDays(days) {
     const newDate = inputValues.date
       ? new Date(inputValues.date + "T00:00:00")
@@ -49,7 +48,7 @@ export default function TaskModal({ isOpen, closeModal }) {
     } else {
       const newData = [
         ...data,
-        { ...formDataObj, id: data.length, isCompleted: false },
+        { ...formDataObj, id: crypto.randomUUID(), isCompleted: false },
       ];
       setNewData(newData);
     }

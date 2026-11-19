@@ -436,7 +436,7 @@ input[type="checkbox"]:checked::after {
   font-family: "Inter", sans-serif;
   color: #838394;
   font-size: 14px;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   text-wrap: wrap;
   max-width: 95%;
 }
