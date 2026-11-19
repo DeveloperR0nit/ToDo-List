@@ -2,6 +2,10 @@
 
 A modern and intuitive To-Do List application built with **React** and **Vite** to help you organize tasks, manage deadlines, and keep track of your productivity.
 
+## Preview
+
+![Task Manager Preview](./screenshots/app-preview.png)
+
 ## Features
 
 - **Task Management** – Create, edit, and delete tasks.
@@ -92,7 +96,3 @@ src/
 ---
 
 **Built with React + Vite.**
-
-## Preview
-
-![Task Manager Preview](./screenshots/app-preview.png)
