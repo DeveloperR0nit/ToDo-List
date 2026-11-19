@@ -96,44 +96,66 @@ export default function Tasklist() {
             onChange={(e) => handleColmpletedCheck(e, task.id)}
           />
           <div className="task-content">
-            <h3>
-              {task.title}
-              <TaskStatus
-                status={getDueStatusSmall(task.date, task.isCompleted)}
-              />
-            </h3>
+            <div className="top">
+              <h3>{task.title}</h3>
+              <div className="status-wrapper">
+                <TaskStatus
+                  status={getDueStatusSmall(task.date, task.isCompleted)}
+                />
+              </div>
+            </div>
             <p className="desc">{task.description}</p>
             <div className="stat">
               <BigTaskStatus
                 status={getDueStatusBig(task.date, task.isCompleted)}
                 date={formatDate(task.date)}
               />
+              {window.innerWidth <= 576 && (
+                <div className="buttons-wrapper">
+                  <button
+                    className="edit"
+                    onClick={() => {
+                      (setIsOpenModal(true), setUpdateTask(task.id));
+                    }}
+                  >
+                    <MdOutlineEdit />
+                  </button>
+                  <button
+                    className="delete"
+                    onClick={() =>
+                      setNewData(data.filter((e) => e.id !== task.id))
+                    }
+                  >
+                    <RiDeleteBin6Line />
+                  </button>
+                </div>
+              )}
             </div>
           </div>
-          <div className="buttons-wrapper">
-            <button
-              className="edit"
-              onClick={() => {
-                (setIsOpenModal(true), setUpdateTask(task.id));
-              }}
-            >
-              <MdOutlineEdit />
-            </button>
-            <button
-              className="delete"
-              onClick={() => setNewData(data.filter((e) => e.id !== task.id))}
-            >
-              <RiDeleteBin6Line />
-            </button>
-          </div>
+          {window.innerWidth > 576 && (
+            <div className="buttons-wrapper">
+              <button
+                className="edit"
+                onClick={() => {
+                  (setIsOpenModal(true), setUpdateTask(task.id));
+                }}
+              >
+                <MdOutlineEdit />
+              </button>
+              <button
+                className="delete"
+                onClick={() => setNewData(data.filter((e) => e.id !== task.id))}
+              >
+                <RiDeleteBin6Line />
+              </button>
+            </div>
+          )}
         </div>
       ))
     ) : searchFilter ? (
       <h2 className="error-msg">No Tasks found! 😊</h2>
     ) : (
-      <h2 className="error-msg">
-        No Tasks. Take a Chill-Pill 😎
-      </h2>
+      <h2 className="error-msg">No Tasks. Take a Chill-Pill 😎</h2>
     );
   return (
     <>

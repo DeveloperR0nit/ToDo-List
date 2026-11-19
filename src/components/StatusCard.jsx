@@ -7,12 +7,21 @@ export default function StatusCard({
   bottomRightText,
   color,
   value,
-  overdueCount
+  overdueCount,
+  headingSm,
+  bottomLeftTextSm,
 }) {
-  const overdueText = overdueCount ? <> (<p className="golden">{overdueCount} overdue</p>)</> : ""
+  const overdueText = overdueCount ? (
+    <>
+      {" "}
+      (<p className="golden">{overdueCount} overdue</p>)
+    </>
+  ) : (
+    ""
+  );
   return (
     <div className="col-4">
-      <div className="status-card">
+      <div className={`status-card ${window.innerWidth < 700 ? "small" : ""}`}>
         <div className="card-top">
           <h3
             className="card-title"
@@ -20,7 +29,7 @@ export default function StatusCard({
               color: `rgb(${color})`,
             }}
           >
-            {heading}
+            {window.innerWidth >= 700 ? heading : headingSm}
           </h3>
           <div
             className="svg-wrapper"
@@ -42,8 +51,8 @@ export default function StatusCard({
           >
             {value}
           </span>
-          {countDesc}
-          {overdueText}
+          {window.innerWidth >= 700 && countDesc}
+          {window.innerWidth >= 700 && overdueText}
         </h2>
         <div
           className="card-bottom"
@@ -52,10 +61,12 @@ export default function StatusCard({
           }}
         >
           <div className="left">
-            {smallSvg}
-            {bottomLeftText}
+            {window.innerWidth >= 700 && smallSvg}
+            {window.innerWidth >= 700 ? bottomLeftText : bottomLeftTextSm}
           </div>
-          <div className="right">{bottomRightText}</div>
+          <div className="right">
+            {window.innerWidth >= 700 && bottomRightText}
+          </div>
         </div>
         <div
           className="blur"

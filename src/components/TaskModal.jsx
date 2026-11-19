@@ -77,13 +77,13 @@ export default function TaskModal({ isOpen, closeModal }) {
             <div className="plus-icon">
               <Plus />
             </div>
-            <div className="heading-content">
-              <h2> Create New Task</h2>
-              <p className="desc">
-                Add task details, schedule a due date, and assign to your
-                workspace.
-              </p>
-            </div>
+          </div>
+          <div className="heading-content">
+            <h2>{updateTask ? "Update" : "Create New"} Task</h2>
+            <p className="desc">
+              Add task details, schedule a due date, and assign to your
+              workspace.
+            </p>
           </div>
           <div className="right">
             <button
@@ -194,7 +194,7 @@ export default function TaskModal({ isOpen, closeModal }) {
               </button>
               <button className="task-btns save-btn" type="submit">
                 <Check />
-                Create Task
+                {updateTask ? "Update Task" : "Create Task"}
               </button>
             </div>
           </div>

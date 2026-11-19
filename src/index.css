@@ -31,6 +31,7 @@ body,
 main {
   flex-grow: 1;
   padding: 16px 48px;
+  overflow: hidden;
 }
 
 .row {
@@ -242,6 +243,7 @@ aside .count-box {
   box-shadow: 0 0 25px -5px rgba(128, 131, 255, 0.15);
   position: relative;
   border: 2px solid #162538;
+  height: 100%;
 }
 .status-card .blur {
   position: absolute;
@@ -419,6 +421,10 @@ input[type="checkbox"]:checked::after {
 .task-box .task-content {
   flex-grow: 1;
 }
+.task-box .top {
+  display: flex;
+  align-items: center;
+}
 .task-box h3 {
   font-family: "Plus Jakarta Sans", sans-serif;
   color: #d3e4fe;
@@ -427,10 +433,13 @@ input[type="checkbox"]:checked::after {
   font-weight: 500;
   margin-bottom: 4px;
   width: 100%;
-  display: flex;
-  align-items: center;
   text-wrap: wrap;
   max-width: 90%;
+  width: fit-content;
+  overflow-wrap: anywhere;
+}
+.task-box .status-wrapper {
+  width: fit-content;
 }
 .task-box .desc {
   font-family: "Inter", sans-serif;
@@ -439,13 +448,13 @@ input[type="checkbox"]:checked::after {
   margin-bottom: 12px;
   text-wrap: wrap;
   max-width: 95%;
+  overflow-wrap: anywhere;
 }
 .task-box.completed h3,
 .task-box.completed .desc {
   text-decoration: line-through;
 }
 .task-box .buttons-wrapper {
-  margin-left: 24px;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -682,8 +691,257 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background-color: white;
 }
 
-
 /* ==================== Responsive ================== */
 
+@media screen and (max-width: 1400px) {
+  .status-card .card-bottom .left {
+    flex-shrink: 0;
+  }
+  .status-card .right {
+    text-wrap: wrap;
+    padding-left: 15px;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .status-card .card-bottom {
+    flex-direction: column;
+    align-items: start;
+    gap: 5px;
+  }
+  .status-card .right {
+    padding-left: 0;
+  }
+}
+@media screen and (max-width: 1000px) {
+  aside {
+    min-width: 200px;
+  }
+}
+@media screen and (max-width: 899px) {
+  .aside-btn {
+    width: fit-content;
+  }
+  .aside-btn .count-box {
+    margin-left: 6px;
+    padding-inline: 6px;
+    border-radius: 4px;
+  }
+  .swiper-slide {
+    width: fit-content !important;
+  }
+  .status-cards {
+    margin-bottom: 20px;
+  }
+  .search-bar-wrapper {
+    margin: 20px 0 32px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .col-4 {
+    padding: 0 4px;
+  }
+  .status-cards.row {
+    margin: 0 -5px 20px;
+  }
+  main {
+    padding: 16px 20px;
+  }
+}
+@media screen and (max-width: 576px) {
+  /* common */
 
+  main {
+    padding: 16px 15px;
+  }
+  header {
+    padding: 11.5px 20px;
+  }
+  header button {
+    padding: 6px;
+  }
 
+  /* Heading */
+
+  .heading {
+    flex-direction: column;
+    align-items: start;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  .heading .right,
+  .heading .btn-primary {
+    width: 100%;
+  }
+
+  /* Status Card */
+
+  .status-card {
+    padding: 12px;
+  }
+  .status-card .card-title {
+    font-size: 10px;
+  }
+  .status-card .blur {
+    display: none;
+  }
+  .status-card .card-top .svg-wrapper {
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent !important;
+    border: none !important;
+  }
+  .status-card .card-top {
+    margin-bottom: 4px;
+  }
+  .status-card .stats span {
+    font-size: 24px;
+    line-height: calc(32 / 24);
+    margin-right: 0;
+  }
+  .status-card .stats {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  .status-card .card-bottom {
+    margin-top: 5px;
+    font-size: 10px;
+    line-height: calc(15 / 10);
+  }
+
+  /* Status Filter Buttons */
+
+  .aside-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  .aside-btn svg {
+    margin-right: 6px;
+  }
+  .aside-btn .count-box {
+    padding: 1px 4px;
+  }
+
+  /* Search Bar */
+
+  .search-bar-wrapper {
+    padding: 8px;
+  }
+  .search-bar {
+    padding: 9px 12px;
+  }
+  .search-bar svg {
+    margin-right: 11.5px;
+  }
+  .search-bar input {
+    font-size: 12px;
+  }
+  .search-bar-wrapper {
+    margin: 20px 0 20px;
+  }
+
+  /* Tasks List */
+
+  .tasks-heading svg {
+    margin-right: 6px;
+  }
+  .task-box {
+    padding: 14px;
+  }
+  .task-box input[type="checkbox"] {
+    margin-right: 12px;
+    align-self: flex-start;
+    margin-top: 5px;
+    border-radius: 8px;
+  }
+  .task-box .top {
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: 8px;
+  }
+  .task-box h3 {
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  .task-status {
+    margin-left: 0;
+  }
+  .task-status.task-status-sm {
+    padding: 1px 6px;
+  }
+  .task-box .desc {
+    font-size: 12px;
+  }
+  .task-status.big-task-status {
+    font-size: 11px;
+  }
+  .task-status svg {
+    max-height: 13px;
+  }
+  .task-box .buttons-wrapper {
+    margin: 0;
+    align-self: flex-end;
+  }
+  .task-box button svg {
+    height: 18px;
+    width: 18px;
+  }
+  .task-box .stat {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* Tasks Modal */
+
+  .modal-bg {
+    padding-inline: 15px;
+  }
+  .modal-wrapper {
+    padding: 20px 15px;
+  }
+  .modal-wrapper .heading {
+    margin-bottom: 15px;
+  }
+  .modal-wrapper .heading,
+  .modal-wrapper .left {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .modal-wrapper .left {
+    order: 1;
+  }
+  .modal-wrapper .heading-content {
+    order: 3;
+  }
+  .modal-wrapper .heading .right {
+    order: 1;
+  }
+  .modal-wrapper .heading .right,
+  .modal-wrapper .heading .btn-primary {
+    width: fit-content;
+  }
+  .modal-wrapper .close-btn {
+    margin-left: 0;
+  }
+  .modal-wrapper .plus-icon {
+    margin-right: 0;
+  }
+  .modal-form input,
+  .modal-form textarea {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+  .modal-form .date-wrapper.row .col-7,
+  .modal-form .date-wrapper.row .col-5 {
+    width: 100%;
+  }
+  .modal-form .date-btns.row {
+    margin-top: 8px;
+  }
+  .modal-form .date-btn {
+    padding: 5px 14px;
+  }
+  .modal-form .bottom-row .task-btns {
+    padding: 8px 12px;
+  }
+}

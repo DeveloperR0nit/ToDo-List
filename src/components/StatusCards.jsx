@@ -16,20 +16,24 @@ export default function StatusCards() {
     <div className="row status-cards">
       <StatusCard
         heading="TOTAL TASKS"
+        headingSm="TOTAL"
         svg={<FileText />}
         countDesc="items created"
         smallSvg={<ChartNoAxesCombined />}
         bottomLeftText="Active Board"
+        bottomLeftTextSm="Active Board"
         bottomRightText="100% capacity"
         color="193, 192, 255"
         value={data.length}
       />
       <StatusCard
         heading="IN PROGRESS / PENDING"
+        headingSm="PENDING"
         svg={<Hourglass />}
         countDesc="need attention"
         smallSvg={<FileClock />}
         bottomLeftText="To Be Done"
+        bottomLeftTextSm={`${statsObj.overdueTasksList.length} overdue`}
         bottomRightText={`${statsObj.overdueTasksList.length} overdue · ${Math.round(((statsObj.pendingTasksList.length + statsObj.overdueTasksList.length) * 100) / data.length)}% remaining`}
         color="255, 185, 95"
         value={
@@ -39,10 +43,12 @@ export default function StatusCards() {
       />
       <StatusCard
         heading="COMPLETED"
+        headingSm="DONE"
         svg={<BadgeCheck />}
         countDesc="resolved"
         smallSvg={<CircleCheckBig />}
         bottomLeftText={`${Math.round((statsObj.completedTasksList.length * 100) / data.length)}% completion rate`}
+        bottomLeftTextSm={`${Math.round((statsObj.completedTasksList.length * 100) / data.length)}% done`}
         bottomRightText="Great work!"
         color="78, 288, 163"
         value={statsObj.completedTasksList.length}

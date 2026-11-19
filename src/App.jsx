@@ -6,6 +6,7 @@ import StatusCards from "./components/StatusCards";
 import SearchBar from "./components/SearchBar";
 import Tasklist from "./components/TaskList";
 import TaskModal from "./components/TaskModal";
+import StatusFilterSm from "./components/StatusFilterSm";
 import { TaskContext } from "./components/TaskContext";
 
 export default function App() {
@@ -80,13 +81,15 @@ export default function App() {
       />
       <Navbar />
       <div className="content">
-        <SideBar />
+        {window.innerWidth > 900 && <SideBar />}
         <main>
           <Heading />
           <StatusCards />
-          <SearchBar>
-            Search tasks by title, note, or due date... (Press / to focus)
-          </SearchBar>
+          {window.innerWidth <= 900 && <StatusFilterSm />}
+          <SearchBar
+            text="Search tasks by title, note, or due date... (Press / to focus)"
+            textSm="Search tasks by title, note, or due date..."
+          />
           <Tasklist />
         </main>
       </div>
