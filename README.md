@@ -1,16 +1,98 @@
-# React + Vite
+# Task Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and intuitive To-Do List application built with **React** and **Vite** to help you organize tasks, manage deadlines, and keep track of your productivity.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Task Management** – Create, edit, and delete tasks.
+- **Task Description** – Add descriptions to provide more context to your tasks.
+- **Due Dates** – Assign deadlines to tasks and keep track of them.
+- **Task Status** – Mark tasks as completed or pending.
+- **Smart Filtering** – Organize tasks based on their status and due dates.
+- **Due Date Tracking** – Identify overdue, due today, and upcoming tasks.
+- **Sidebar Navigation** – Navigate between different task categories.
+- **Responsive Interface** – A clean interface designed for easy task management.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React** – Building the user interface and managing components.
+- **JavaScript** – Application logic and functionality.
+- **CSS** – Styling and responsive layouts.
+- **Vite** – Development server and build tool.
+- **Lucide React** – Icons and visual elements.
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Follow these steps to run the project locally.
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/)
+- npm
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone <your-repository-url>
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd <project-folder>
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open the local URL provided by Vite in your browser.
+
+## Project Structure
+
+```text
+src/
+├── components/
+├── context/
+├── hooks/
+├── utils/
+├── App.jsx
+├── main.jsx
+└── index.css
+```
+
+## Available Scripts
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run lint` | Run ESLint |
+
+## Future Improvements
+
+- Local storage or database integration for persistent tasks.
+- Task priority levels.
+- Search functionality.
+- Task sorting and additional filtering options.
+
+---
+
+**Built with React + Vite.**
+
+## Preview
+
+![Task Manager Preview](./screenshots/app-preview.png)
