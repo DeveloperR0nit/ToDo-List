@@ -751,6 +751,93 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background-color: white;
 }
 
+/* ===== Delete Modal ======= */
+
+.modal-bg.delete {
+  align-items: center;
+}
+.modal-wrapper.delete {
+  padding: 28px;
+  max-width: 420px;
+  margin-top: 0;
+}
+.modal-wrapper.delete::before {
+  background: linear-gradient(to right, #ef4444, #f43f5e, #f59e0b);
+}
+.modal-wrapper.delete .delete-logo {
+  padding: 14px;
+  background-color: #2d2233;
+  border: 1px solid #682c38;
+  width: fit-content;
+  margin: auto;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+.modal-wrapper.delete .delete-logo svg {
+  height: 18px;
+  width: 18px;
+  color: #f87171;
+  display: block;
+}
+.modal-wrapper.delete h3 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 20px;
+  line-height: calc(27.5 / 20);
+  font-weight: 600;
+  text-align: center;
+  color: white;
+  margin-bottom: 6px;
+}
+.modal-wrapper.delete p {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  line-height: calc(22.8 / 14);
+  font-weight: 500;
+  text-align: center;
+  color: #94a3b8;
+  margin-bottom: 24px;
+}
+.modal-wrapper.delete .btns {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.modal-wrapper.delete .delete-modal-btn {
+  padding-block: 10px;
+  width: 100%;
+  border-radius: 12px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 12px;
+  line-height: calc(16 / 12);
+  cursor: pointer;
+  transition: 0.3s ease all;
+}
+.modal-wrapper.delete .delete-modal-btn:hover {
+  transform: scale(1.1);
+}
+.modal-wrapper.delete .cancel {
+  color: #cbd5e1;
+  border: 1px solid #1e334d;
+  font-weight: 500;
+  background: #102034;
+}
+.modal-wrapper.delete .delete {
+  color: #ffffff;
+  border: 1px solid #1e334d;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(to right, #dc2626, #e11d48);
+  justify-content: center;
+  border: 1px solid #dc2626;
+  box-shadow: 0 4px 18px rgba(239, 68, 68, 0.45);
+}
+.modal-wrapper.delete svg {
+  height: 12px;
+  width: 12px;
+}
+
 /* ==================== Responsive ================== */
 
 @media screen and (max-width: 1400px) {
@@ -1009,5 +1096,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
   .modal-form .bottom-row .task-btns {
     padding: 8px 12px;
+  }
+
+  /* Delete Modal */
+
+  .modal-wrapper.delete {
+    padding: 28px 20px;
+    max-width: 290px;
+  }
+  .modal-wrapper.delete .delete-logo {
+    padding: 10px;
+  }
+  .modal-wrapper.delete p {
+    font-size: 13px;
   }
 }

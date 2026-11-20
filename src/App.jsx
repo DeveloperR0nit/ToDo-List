@@ -7,6 +7,7 @@ import SearchBar from "./components/SearchBar";
 import Tasklist from "./components/TaskList";
 import TaskModal from "./components/TaskModal";
 import StatusFilterSm from "./components/StatusFilterSm";
+import DeleteModal from "./components/DeleteModal";
 import { TaskContext } from "./components/TaskContext";
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
   const [updateTask, setUpdateTask] = React.useState(false);
   const [sideBarActive, setSideBarActive] = React.useState("all");
   const [searchFilter, setSearchFilter] = React.useState("");
+  const [isOpenDeleteModal, setIsOpenDeleteModal] = React.useState(false);
   const [data, setData] = React.useState(
     () => JSON.parse(localStorage.getItem("tasks")) || [],
   );
@@ -59,6 +61,7 @@ export default function App() {
     localStorage.setItem("tasks", JSON.stringify(newData));
     setData(JSON.parse(localStorage.getItem("tasks")));
   }
+  console.log(isOpenDeleteModal)
   return (
     <TaskContext.Provider
       value={{
@@ -72,12 +75,18 @@ export default function App() {
         statsObj,
         searchFilter,
         setSearchFilter,
+        isOpenDeleteModal,
+        setIsOpenDeleteModal,
       }}
     >
       <TaskModal
         isOpen={isOpenModal}
         closeModal={() => setIsOpenModal(false)}
         key={updateTask ?? "new"}
+      />
+      <DeleteModal
+        isOpen={isOpenDeleteModal}
+        setIsOpenDeleteModal={setIsOpenDeleteModal}
       />
       <Navbar />
       <div className="content">

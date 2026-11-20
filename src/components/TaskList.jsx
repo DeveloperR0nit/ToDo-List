@@ -15,6 +15,7 @@ export default function Tasklist() {
     sideBarActive,
     statsObj,
     searchFilter,
+    setIsOpenDeleteModal,
   } = useContext(TaskContext);
   function handleColmpletedCheck(e, id) {
     const updatedData = data.map((task) =>
@@ -122,9 +123,7 @@ export default function Tasklist() {
                   </button>
                   <button
                     className="delete"
-                    onClick={() =>
-                      setNewData(data.filter((e) => e.id !== task.id))
-                    }
+                    onClick={() => setIsOpenDeleteModal(task.id)}
                   >
                     <RiDeleteBin6Line />
                   </button>
@@ -144,7 +143,7 @@ export default function Tasklist() {
               </button>
               <button
                 className="delete"
-                onClick={() => setNewData(data.filter((e) => e.id !== task.id))}
+                onClick={() => setIsOpenDeleteModal(task.id)}
               >
                 <RiDeleteBin6Line />
               </button>
