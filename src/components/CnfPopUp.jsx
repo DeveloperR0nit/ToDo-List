@@ -3,13 +3,13 @@ import { TaskContext } from "./TaskContext";
 import { useContext } from "react";
 
 export default function CnfPopUp() {
-  const { cnfPopUpType } = useContext(TaskContext);
+  const { cnfPopUpType, theme } = useContext(TaskContext);
   function popUpDetails() {
     if (cnfPopUpType === "add") {
       return {
         styles: {
-          color: "rgb(78, 222, 163)",
-          backgroundColor: "rgba(78,222,163,0.15)",
+          color: theme === "dark" ? "rgb(78, 222, 163)" : "#006C49",
+          backgroundColor: theme === "dark" ? "rgba(78,222,163,0.15)" : "#ecfdf5",
           border: "2px solid rgba(78,222,163,0.3)",
         },
         svg: <Check />,
@@ -18,8 +18,8 @@ export default function CnfPopUp() {
     } else if (cnfPopUpType === "edit") {
       return {
         styles: {
-          color: "rgb(255,185,95)",
-          backgroundColor: "rgba(255,185,95,0.15)",
+          color: theme === "dark" ? "rgb(255,185,95)" : "#B45309",
+          backgroundColor: theme === "dark" ? "rgba(255,185,95,0.15)" : "#fffbeb",
           border: "2px solid rgba(255,185,95,0.3)",
         },
         svg: <PenLine />,
@@ -28,8 +28,8 @@ export default function CnfPopUp() {
     } else if (cnfPopUpType === "delete") {
       return {
         styles: {
-          color: "rgb(255,180,171)",
-          backgroundColor: "rgba(147,0,10,0.3)",
+          color: theme === "dark" ? "rgb(255,180,171)" : "#BA1A1A",
+          backgroundColor: theme === "dark" ? "rgba(147,0,10,0.3)" : "#FEF2F2",
           border: "2px solid rgba(255,180,171,0.3)",
         },
         svg: <Trash />,

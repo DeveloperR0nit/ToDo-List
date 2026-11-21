@@ -1,17 +1,17 @@
 import { GoDotFill } from "react-icons/go";
 import { CheckCheck, TriangleExclamationPoint } from "lucide-react";
-export default function TaskStatus({ status }) {
+export default function TaskStatus({ status, theme }) {
   let color, svg, background;
   if (status === "completed") {
-    color = "59, 171, 132";
+    color = theme === "dark" ? "59, 171, 132" : "0 ,108, 73";
     svg = <CheckCheck />;
   } else if (status === "pending") {
-    color = "255, 185, 95";
+    color = theme === "dark" ? "255, 185, 95" : "217, 119, 6";
     svg = <GoDotFill />;
   } else if (status === "overdue") {
-    color = "255, 180, 171";
+    color = theme === "dark" ? "255, 180, 171" : "186, 26, 26";
     svg = <TriangleExclamationPoint />;
-    background = "#2e0d1e"
+    background =  theme === "dark" ? "#2e0d1e" : "#FEF2F2";
   }
   return (
     <span

@@ -20,7 +20,6 @@ export default function Heading() {
           <Plus />
           New Task
         </PrimaryBtn>
-        ;
       </div>
     </div>
   );

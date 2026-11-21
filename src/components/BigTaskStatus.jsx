@@ -5,25 +5,25 @@ import {
   Clock,
   CalendarDays,
 } from "lucide-react";
-export default function BigTaskStatus({ status, date }) {
+export default function BigTaskStatus({ status, date, theme }) {
   let color, svg, background, text;
   if (status === "completed") {
-    color = "144, 143, 160";
+    color = theme === "dark" ? "144, 143, 160" : "0 ,108, 73";
     svg = <CalendarCheck />;
-    text = `Completed (${date})`
+    text = `Completed (${date})`;
   } else if (status === "due-tomorrow") {
-    color = "255, 185, 95";
+    color = theme === "dark" ? "255, 185, 95" : "217, 119, 6";
     svg = <CalendarArrowRight />;
-    text = `Due Tomorrow`
+    text = `Due Tomorrow`;
   } else if (status === "overdue") {
-    color = "255, 180, 171";
+    color = theme === "dark" ? "255, 180, 171" : "186, 26, 26";
     svg = <TriangleExclamationPoint />;
-    background = "#2e0d1e";
-    text = `Overdue (${date})`
+    background = theme === "dark" ? "#2e0d1e" : "#FEF2F2";
+    text = `Overdue (${date})`;
   } else if (status === "due-today") {
-    color = "193, 192, 255";
+    color = theme === "dark" ? "193, 192, 255" : "79, 70, 229";
     svg = <Clock />;
-    text = `Due Today`
+    text = `Due Today`;
   } else if (status === "due") {
     color = "144, 143, 160";
     svg = <CalendarDays />;

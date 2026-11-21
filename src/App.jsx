@@ -21,6 +21,13 @@ export default function App() {
   const [data, setData] = React.useState(
     () => JSON.parse(localStorage.getItem("tasks")) || [],
   );
+  const [theme, setTheme] = React.useState(
+    localStorage.getItem("theme") || "dark",
+  );
+  React.useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
   const statsObj = {
     allTasksList: data.map((task) => task.id),
     completedTasksList: data
@@ -80,6 +87,8 @@ export default function App() {
         setIsOpenDeleteModal,
         cnfPopUpType,
         setCnfPopUpType,
+        theme,
+        setTheme,
       }}
     >
       <TaskModal

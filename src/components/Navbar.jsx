@@ -1,14 +1,20 @@
-// import React from "react";
+import { useContext } from "react";
 import navLogo from "../assets/nav-logo.png";
+import { TaskContext } from "./TaskContext";
 
 export default function Navbar() {
+  const { setTheme } = useContext(TaskContext);
   return (
     <header>
       <a className="nav-logo" href="/">
         <img src={navLogo} alt="nav logo here" />
         TaskFlow
       </a>
-      <button>
+      <button
+        onClick={() =>
+          setTheme((prev) => (prev === "light" ? "dark" : "light"))
+        }
+      >
         <svg
           width="19"
           height="19"

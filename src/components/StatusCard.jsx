@@ -10,11 +10,17 @@ export default function StatusCard({
   overdueCount,
   headingSm,
   bottomLeftTextSm,
+  theme,
+  colorLight,
 }) {
   const overdueText = overdueCount ? (
     <>
       {" "}
-      (<p className="golden">{overdueCount} overdue</p>)
+      (
+      <p className={theme === "dark" ? "golden" : "red"}>
+        {overdueCount} overdue
+      </p>
+      )
     </>
   ) : (
     ""
@@ -26,7 +32,7 @@ export default function StatusCard({
           <h3
             className="card-title"
             style={{
-              color: `rgb(${color})`,
+              color: `rgb(${theme === "dark" ? color : colorLight})`,
             }}
           >
             {window.innerWidth >= 700 ? heading : headingSm}
@@ -34,9 +40,9 @@ export default function StatusCard({
           <div
             className="svg-wrapper"
             style={{
-              backgroundColor: `rgba(${color},0.15)`,
-              border: `2px solid rgba(${color},0.25)`,
-              color: `rgb(${color})`,
+              backgroundColor: `rgba(${theme === "dark" ? color : colorLight},0.15)`,
+              border: `2px solid rgba(${theme === "dark" ? color : colorLight},0.25)`,
+              color: `rgb(${theme === "dark" ? color : colorLight})`,
             }}
           >
             {svg}
@@ -45,7 +51,7 @@ export default function StatusCard({
         <h2 className="stats">
           <span
             style={{
-              color: `rgb(${color})`,
+              color: `rgb(${theme === "dark" ? color : colorLight})`,
             }}
             className="number"
           >
@@ -57,7 +63,7 @@ export default function StatusCard({
         <div
           className="card-bottom"
           style={{
-            color: `rgb(${color})`,
+            color: `rgb(${theme === "dark" ? color : colorLight})`,
           }}
         >
           <div className="left">
@@ -71,7 +77,7 @@ export default function StatusCard({
         <div
           className="blur"
           style={{
-            backgroundColor: `rgba(${color},0.1)`,
+            backgroundColor: `rgba(${theme === "dark" ? color : colorLight},0.1)`,
           }}
         ></div>
       </div>

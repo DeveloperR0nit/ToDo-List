@@ -19,6 +19,7 @@ export default function SideBar() {
         <SideBarBtns
           icon={<Inbox />}
           color="white"
+          colorLight="black"
           count={data.length}
           taskStatus="all"
         >
@@ -27,6 +28,7 @@ export default function SideBar() {
         <SideBarBtns
           icon={<Hourglass />}
           color="#FFB95F"
+          colorLight="#D97706"
           count={statsObj.pendingTasksList.length}
           taskStatus="pending"
         >
@@ -35,6 +37,7 @@ export default function SideBar() {
         <SideBarBtns
           icon={<CircleCheck />}
           color="#4EDEA3"
+          colorLight="#006C49"
           count={statsObj.completedTasksList.length}
           taskStatus="completed"
         >
@@ -46,6 +49,7 @@ export default function SideBar() {
         <SideBarBtns
           icon={<TriangleExclamationPoint />}
           color="#FFB4AB"
+          colorLight="#BA1A1A"
           danger={true}
           count={statsObj.overdueTasksList.length}
           taskStatus="overdue"
@@ -55,6 +59,7 @@ export default function SideBar() {
         <SideBarBtns
           icon={<CalendarClock />}
           color="#C0C1FF"
+          colorLight="#3525CD"
           count={statsObj.dueTodayTasksList.length}
           taskStatus="dueToday"
         >
@@ -63,6 +68,7 @@ export default function SideBar() {
         <SideBarBtns
           icon={<CalendarDays />}
           color="#908FA0"
+          colorLight="#475569"
           count={statsObj.upcomingTasksList.length}
           taskStatus="upcoming"
         >

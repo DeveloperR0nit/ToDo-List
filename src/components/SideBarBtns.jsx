@@ -8,17 +8,21 @@ export default function SideBarBtns({
   danger,
   count,
   taskStatus,
+  colorLight,
 }) {
-  const { sideBarActive, setSideBarActive } = useContext(TaskContext);
+  const { sideBarActive, setSideBarActive, theme } = useContext(TaskContext);
   return (
     <button
-      className={`aside-btn ${danger ? "danger" : ""} ${sideBarActive === taskStatus ? "active" : ""}`}
-      style={{ color }}
+      className={`aside-btn ${danger ? "danger" : ""} ${sideBarActive === taskStatus ? "active" : ""} ${theme === "light" ? "light" : ""}`}
+      style={theme === "dark" ? { color } : { color: colorLight }}
       onClick={() => setSideBarActive(taskStatus)}
     >
       {icon}
       <span>{children}</span>
-      <div className="count-box" style={{ color }}>
+      <div
+        className="count-box"
+        style={theme === "dark" ? { color } : { color: colorLight }}
+      >
         {count}
       </div>
     </button>

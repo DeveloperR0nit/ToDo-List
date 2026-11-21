@@ -11,7 +11,7 @@ export default function DeleteModal() {
     setCnfPopUpType,
   } = useContext(TaskContext);
   return (
-    <div className={`modal-bg ${!isOpenDeleteModal ? "closed" : ""} delete`}>
+    <div className={`modal-bg ${isOpenDeleteModal === false ? "closed" : ""} delete`}>
       <div className="modal-wrapper delete">
         <div className="delete-logo">
           <FaRegTrashCan />

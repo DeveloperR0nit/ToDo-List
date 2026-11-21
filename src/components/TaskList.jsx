@@ -16,6 +16,7 @@ export default function Tasklist() {
     statsObj,
     searchFilter,
     setIsOpenDeleteModal,
+    theme
   } = useContext(TaskContext);
   function handleColmpletedCheck(e, id) {
     const updatedData = data.map((task) =>
@@ -102,6 +103,7 @@ export default function Tasklist() {
               <div className="status-wrapper">
                 <TaskStatus
                   status={getDueStatusSmall(task.date, task.isCompleted)}
+                  theme={theme}
                 />
               </div>
             </div>
@@ -110,6 +112,7 @@ export default function Tasklist() {
               <BigTaskStatus
                 status={getDueStatusBig(task.date, task.isCompleted)}
                 date={formatDate(task.date)}
+                theme={theme}
               />
               {window.innerWidth <= 576 && (
                 <div className="buttons-wrapper">
@@ -158,7 +161,7 @@ export default function Tasklist() {
       <h2 className="error-msg">No Tasks. Take a Chill-Pill 😎</h2>
     );
   return (
-    <>
+    <div className="task-list">
       <div className="tasks-heading">
         <span>
           Showing {displayedTasks.length} of {data.length} tasks
@@ -169,6 +172,6 @@ export default function Tasklist() {
         </span>
       </div>
       {AllTasks}
-    </>
+    </div>
   );
 }
