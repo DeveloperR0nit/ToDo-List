@@ -8,6 +8,7 @@ import Tasklist from "./components/TaskList";
 import TaskModal from "./components/TaskModal";
 import StatusFilterSm from "./components/StatusFilterSm";
 import DeleteModal from "./components/DeleteModal";
+import CnfPopUp from "./components/CnfPopUp";
 import { TaskContext } from "./components/TaskContext";
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
   const [sideBarActive, setSideBarActive] = React.useState("all");
   const [searchFilter, setSearchFilter] = React.useState("");
   const [isOpenDeleteModal, setIsOpenDeleteModal] = React.useState(false);
+  const [cnfPopUpType, setCnfPopUpType] = React.useState(false);
   const [data, setData] = React.useState(
     () => JSON.parse(localStorage.getItem("tasks")) || [],
   );
@@ -61,7 +63,6 @@ export default function App() {
     localStorage.setItem("tasks", JSON.stringify(newData));
     setData(JSON.parse(localStorage.getItem("tasks")));
   }
-  console.log(isOpenDeleteModal)
   return (
     <TaskContext.Provider
       value={{
@@ -77,6 +78,8 @@ export default function App() {
         setSearchFilter,
         isOpenDeleteModal,
         setIsOpenDeleteModal,
+        cnfPopUpType,
+        setCnfPopUpType,
       }}
     >
       <TaskModal
@@ -88,6 +91,7 @@ export default function App() {
         isOpen={isOpenDeleteModal}
         setIsOpenDeleteModal={setIsOpenDeleteModal}
       />
+      <CnfPopUp />
       <Navbar />
       <div className="content">
         {window.innerWidth > 900 && <SideBar />}

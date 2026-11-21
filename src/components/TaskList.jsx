@@ -136,7 +136,8 @@ export default function Tasklist() {
               <button
                 className="edit"
                 onClick={() => {
-                  (setIsOpenModal(true), setUpdateTask(task.id));
+                  setIsOpenModal(true);
+                  setUpdateTask(task.id);
                 }}
               >
                 <MdOutlineEdit />

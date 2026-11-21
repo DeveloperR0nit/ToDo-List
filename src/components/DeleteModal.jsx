@@ -3,8 +3,13 @@ import { TaskContext } from "./TaskContext";
 import { FaRegTrashCan } from "react-icons/fa6";
 
 export default function DeleteModal() {
-  const { data, setNewData, isOpenDeleteModal, setIsOpenDeleteModal } =
-    useContext(TaskContext);
+  const {
+    data,
+    setNewData,
+    isOpenDeleteModal,
+    setIsOpenDeleteModal,
+    setCnfPopUpType,
+  } = useContext(TaskContext);
   return (
     <div className={`modal-bg ${!isOpenDeleteModal ? "closed" : ""} delete`}>
       <div className="modal-wrapper delete">
@@ -27,7 +32,9 @@ export default function DeleteModal() {
             className="delete delete-modal-btn"
             onClick={() => {
               setNewData(data.filter((e) => e.id !== isOpenDeleteModal));
-              setIsOpenDeleteModal(false)
+              setIsOpenDeleteModal(false);
+              setCnfPopUpType("delete");
+              setTimeout(() => setCnfPopUpType(false), 3200);
             }}
           >
             <FaRegTrashCan />

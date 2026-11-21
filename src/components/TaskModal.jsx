@@ -3,7 +3,7 @@ import { Check, Plus } from "lucide-react";
 import { TaskContext } from "./TaskContext";
 
 export default function TaskModal({ isOpen, closeModal }) {
-  const { data, setNewData, updateTask, setUpdateTask } =
+  const { data, setNewData, updateTask, setUpdateTask, setCnfPopUpType } =
     useContext(TaskContext);
   const [inputValues, setInputValues] = useState(
     () =>
@@ -45,12 +45,16 @@ export default function TaskModal({ isOpen, closeModal }) {
       );
       setNewData(newData);
       setUpdateTask(false);
+      setCnfPopUpType("edit");
+      setTimeout(() => setCnfPopUpType(false), 3200);
     } else {
       const newData = [
         ...data,
         { ...formDataObj, id: crypto.randomUUID(), isCompleted: false },
       ];
       setNewData(newData);
+      setCnfPopUpType("add");
+      setTimeout(() => setCnfPopUpType(false), 3200);
     }
     closeModal();
     setInputValues({
@@ -125,7 +129,9 @@ export default function TaskModal({ isOpen, closeModal }) {
               }))
             }
           ></textarea>
-          <label htmlFor="date">DUE DATE & SCHEDULE</label>
+          <label htmlFor="date">
+            DUE DATE & SCHEDULE <span> *</span>
+          </label>
           <div className="date-wrapper row">
             <div className="col-7">
               <input

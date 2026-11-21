@@ -838,6 +838,63 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   width: 12px;
 }
 
+/* ===== Confirmation PopUp ======= */
+
+.modal-bg.popup {
+  align-items: center;
+  animation: popup-bg 3s ease-in-out forwards;
+}
+.modal-bg.popup.hide {
+  display: none;
+}
+.modal-wrapper.popup {
+  margin-top: 0;
+  animation: popup 2s ease-in-out forwards 0.5s;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.modal-wrapper.popup::before {
+  display: none;
+}
+.modal-wrapper.popup h3 {
+  font-size: 18px;
+}
+
+@keyframes popup {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes popup-bg {
+  0% {
+    opacity: 0;
+    z-index: -1;
+  }
+  20% {
+    opacity: 1;
+    z-index: 100;
+  }
+  80% {
+    opacity: 1;
+    z-index: 100;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
 /* ==================== Responsive ================== */
 
 @media screen and (max-width: 1400px) {
@@ -1109,5 +1166,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
   .modal-wrapper.delete p {
     font-size: 13px;
+  }
+
+  /* Confirmation PopUp */
+
+  .modal-wrapper.popup {
+    padding: 12px 15px;
+  }
+  .modal-wrapper.popup svg{
+    height: 20px;
+    width: 20px;
+  }
+  .modal-wrapper.popup h3 {
+    font-size: 16px;
   }
 }
