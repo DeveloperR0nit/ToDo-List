@@ -4,7 +4,13 @@ A modern and intuitive To-Do List application built with **React** and **Vite** 
 
 ## Preview
 
-![Task Manager Preview](./screenshots/app-preview.png)
+<div align="center">
+  <img src="./screenshots/app-preview.png" width="48%" />
+  <img src="./screenshots/app-preview-light.png" width="48%" />
+  <img src="./screenshots/app-preview-mobile.png" width="32%" />
+  <img src="./screenshots/app-preview-mobile-2.png" width="32%" />
+  <img src="./screenshots/app-preview-mobile-3.png" width="32%" />
+</div>
 
 ## Features
 
