@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import TaskStatus from "./TaskStatus";
 import BigTaskStatus from "./BigTaskStatus";
-import { GoDotFill } from "react-icons/go";
 import { MdOutlineEdit } from "react-icons/md";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { TaskContext } from "./TaskContext";
@@ -170,10 +169,9 @@ export default function Tasklist() {
         <span>
           Showing {displayedTasks.length} of {data.length} tasks
         </span>
-        <span className="right">
-          {" "}
-          <GoDotFill /> Real-time sync
-        </span>
+        <button className="right" onClick={() => setIsOpenDeleteModal("all")}>
+          Delete All Tasks
+        </button>
       </div>
       {AllTasks}
     </div>

@@ -1,4 +1,11 @@
-import { Check, PenLine, Trash, Plus, Palette } from "lucide-react";
+import {
+  Check,
+  PenLine,
+  Trash,
+  Plus,
+  Palette,
+  BroomSparkles,
+} from "lucide-react";
 import { TaskContext } from "./TaskContext";
 import { useContext } from "react";
 
@@ -45,15 +52,18 @@ export default function CnfPopUp() {
         svg: <PenLine />,
         text: "Task Edited Successfully 😉",
       };
-    } else if (cnfPopUpType === "delete") {
+    } else if (cnfPopUpType === "delete" || cnfPopUpType === "delete-all") {
       return {
         styles: {
           color: theme === "dark" ? "rgb(255,180,171)" : "#BA1A1A",
           backgroundColor: theme === "dark" ? "rgba(147,0,10,0.3)" : "#FEF2F2",
           border: "2px solid rgba(255,180,171,0.3)",
         },
-        svg: <Trash />,
-        text: "Task Delted from Workspace 😉",
+        svg: cnfPopUpType === "delete" ? <Trash /> : <BroomSparkles />,
+        text:
+          cnfPopUpType === "delete"
+            ? "Task Delted from Workspace 😉"
+            : "All Tasks Deleted from Workspace",
       };
     } else if (cnfPopUpType === "add") {
       return {
