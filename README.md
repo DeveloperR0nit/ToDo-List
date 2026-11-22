@@ -1,105 +1,185 @@
-# Task Manager
+# ⚡ TASK FLOW
 
-A modern and intuitive To-Do List application built with **React** and **Vite** to help you organize tasks, manage deadlines, and keep track of your productivity.
+\<div align="center">
 
-## Preview
+&#x20; \<img src="[https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=24&duration=3000&pause=1000&color=00F7FF&center=true&vCenter=true&width=600&lines=PLAN.+ORGANIZE.+CONQUER.;YOUR+PRODUCTIVITY%2C+REDEFINED.;STAY+FOCUSED.+STAY+AHEAD](https://readme-typing-svg.demolab.com?font=Orbitron\&weight=700\&size=24\&duration=3000\&pause=1000\&color=00F7FF\&center=true\&vCenter=true\&width=600\&lines=PLAN.+ORGANIZE.+CONQUER.;YOUR+PRODUCTIVITY%2C+REDEFINED.;STAY+FOCUSED.+STAY+AHEAD)." alt="Typing SVG" />
 
-<div align="center">
-  <img src="./screenshots/app-preview.png" width="48%" />
-  <img src="./screenshots/app-preview-light.png" width="48%" />
-  <img src="./screenshots/app-preview-mobile.png" width="32%" />
-  <img src="./screenshots/app-preview-mobile-2.png" width="32%" />
-  <img src="./screenshots/app-preview-mobile-3.png" width="32%" />
-</div>
+&#x20; \<br/>
 
-## Features
+**A modern task management experience built for productivity.**
 
-- **Task Management** – Create, edit, and delete tasks.
-- **Task Description** – Add descriptions to provide more context to your tasks.
-- **Due Dates** – Assign deadlines to tasks and keep track of them.
-- **Task Status** – Mark tasks as completed or pending.
-- **Smart Filtering** – Organize tasks based on their status and due dates.
-- **Due Date Tracking** – Identify overdue, due today, and upcoming tasks.
-- **Sidebar Navigation** – Navigate between different task categories.
-- **Responsive Interface** – A clean interface designed for easy task management and for a seamless experience across different screen sizes and devices.
-- **Theme Switching** – Switch between Light and Dark themes according to your preference.
+Organize your workflow, track deadlines, and take control of your day with a sleek and responsive To-Do application powered by React.
 
-## Tech Stack
+&#x20; \<br/>
 
-- **React** – Building the user interface and managing components.
-- **JavaScript** – Application logic and functionality.
-- **CSS** – Styling and responsive layouts.
-- **Vite** – Development server and build tool.
-- **Lucide React** – Icons and visual elements.
 
-## Getting Started
 
-Follow these steps to run the project locally.
+\
 
-### Prerequisites
+
+&#x20; \<br/>
+
+\<a href="#-preview">PREVIEW\</a> •
+\<a href="#-features">FEATURES\</a> •
+\<a href="#-tech-stack">TECH STACK\</a> •
+\<a href="#-installation">INSTALLATION\</a>
+
+\</div>
+
+---
+
+## ◈ PREVIEW
+
+\<div align="center">
+
+&#x20; \<img src="./screenshots/app-preview\.png" width="48%" />
+&#x20; \<img src="./screenshots/app-preview-light.png" width="48%" />
+
+\<br/>\<br/>
+
+&#x20; \<img src="./screenshots/app-preview-mobile.png" width="32%" />
+&#x20; \<img src="./screenshots/app-preview-mobile-2.png" width="32%" />
+&#x20; \<img src="./screenshots/app-preview-mobile-3.png" width="32%" />
+
+\</div>
+
+---
+
+## ◈ FEATURES
+
+> **Everything you need to stay organized and productive.**
+
+| Feature                   | Description                                                     |
+| :------------------------ | :-------------------------------------------------------------- |
+| ⚡ **Task Management**     | Create, edit, and delete tasks effortlessly.                    |
+| 📝 **Task Description**   | Add detailed descriptions for better context.                   |
+| 📅 **Due Dates**          | Assign deadlines and manage your schedule.                      |
+| ✅ **Task Status**         | Track completed and pending tasks.                              |
+| 🎯 **Smart Filtering**    | Filter tasks according to their status and deadlines.           |
+| ⏰ **Due Date Tracking**   | Identify overdue, due today, and upcoming tasks.                |
+| 🧭 **Sidebar Navigation** | Navigate between different task categories.                     |
+| 📱 **Responsive Design**  | Seamless experience across desktop, tablet, and mobile devices. |
+| 🌗 **Theme Switching**    | Instantly switch between Light and Dark themes.                 |
+
+---
+
+## ◈ TECH STACK
+
+**Built using modern web technologies.**
+
+\<div align="center">
+
+|      Technology     | Purpose                             |
+| :-----------------: | :---------------------------------- |
+|     ⚛️ **React**    | Component-based UI development      |
+|  🟨 **JavaScript**  | Application logic and functionality |
+|      🎨 **CSS**     | Styling and responsive layouts      |
+|      ⚡ **Vite**     | Development server and build tool   |
+| 🧩 **Lucide React** | Icons and visual elements           |
+
+\</div>
+
+---
+
+## ◈ INSTALLATION
+
+**Get the project running on your local machine.**
+
+### 01 — Prerequisites
 
 Make sure you have the following installed:
 
 - [Node.js](https://nodejs.org/)
-- npm
+- npm (included with Node.js)
 
-### Installation
+### 02 — Clone the repository
 
-1. Clone the repository:
-
-   ```bash
-   git clone <your-repository-url>
-   ```
-
-2. Navigate to the project directory:
-
-   ```bash
-   cd <project-folder>
-   ```
-
-3. Install dependencies:
-
-   ```bash
-   npm install
-   ```
-
-4. Start the development server:
-
-   ```bash
-   npm run dev
-   ```
-
-5. Open the local URL provided by Vite in your browser.
-
-## Project Structure
-
-```text
-src/
-├── components/
-├── context/
-├── hooks/
-├── utils/
-├── App.jsx
-├── main.jsx
-└── index.css
+```bash
+git clone https://github.com/DeveloperR0nit/ToDo-List
 ```
 
-## Available Scripts
+### 03 — Navigate to the project
 
-| Command           | Description              |
-| ----------------- | ------------------------ |
-| `npm run dev`     | Start development server |
-| `npm run build`   | Build for production     |
-| `npm run preview` | Preview production build |
-| `npm run lint`    | Run ESLint               |
+```bash
+cd to-do-list
+```
 
-## Future Improvements
+### 04 — Install dependencies
 
-- Local storage or database integration for persistent tasks.
-- Task priority levels.
-- Search functionality.
-- Task sorting and additional filtering options.
+```bash
+npm install
+```
+
+### 05 — Launch the development server
+
+```bash
+npm run dev
+```
+
+Open the local URL provided by Vite in your browser.
 
 ---
 
-**Built with React + Vite.**
+## ◈ PROJECT STRUCTURE
+
+```text
+TASK-MANAGER/
+│
+├── public/
+├── screenshots/
+│
+├── src/
+│   ├── components/
+│   ├── context/
+│   ├── hooks/
+│   ├── utils/
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+│
+├── package.json
+├── vite.config.js
+└── README.md
+```
+
+---
+
+## ◈ AVAILABLE SCRIPTS
+
+| Command           | Description                          |
+| :---------------- | :----------------------------------- |
+| `npm run dev`     | Start the development server         |
+| `npm run build`   | Build the application for production |
+| `npm run preview` | Preview the production build         |
+| `npm run lint`    | Run ESLint                           |
+
+---
+
+## ◈ FUTURE UPGRADES
+
+The mission isn't over yet. Here's what's planned:
+
+- [ ] 💾 Database integration for persistent tasks and cross-platform sync.
+- [ ] 🚩 Task priority levels.
+- [ ] 🔃 Advanced task sorting and filtering.
+- [ ] ⏰ Task due time and alerts.
+
+---
+
+\<div align="center">
+
+## ⚡ PRODUCTIVITY MODE: ACTIVATED
+
+**PLAN SMARTER. WORK BETTER. GET THINGS DONE.**
+
+&#x20; \<br/>
+
+Built with ❤️ using **React + Vite**
+
+&#x20; \<img src="[https://img.shields.io/badge/STATUS-ACTIVE-00F7FF?style=for-the-badge&labelColor=101820](https://img.shields.io/badge/STATUS-ACTIVE-00F7FF?style=for-the-badge\&labelColor=101820)" />
+
+\<br/>\<br/>
+
+*Thanks for checking out this project!*
+
+\</div>
