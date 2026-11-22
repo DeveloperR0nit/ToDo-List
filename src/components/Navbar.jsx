@@ -3,17 +3,19 @@ import navLogo from "../assets/nav-logo.png";
 import { TaskContext } from "./TaskContext";
 
 export default function Navbar() {
-  const { setTheme } = useContext(TaskContext);
+  const { setTheme, setCnfPopUpType, CnfPopUpType } = useContext(TaskContext);
   return (
-    <header>
+    <header className={CnfPopUpType !== false ? "hide" : ""}>
       <a className="nav-logo" href="/">
         <img src={navLogo} alt="nav logo here" />
         TaskFlow
       </a>
       <button
-        onClick={() =>
-          setTheme((prev) => (prev === "light" ? "dark" : "light"))
-        }
+        onClick={() => {
+          setTheme((prev) => (prev === "light" ? "dark" : "light"));
+          setCnfPopUpType("switch-theme");
+          setTimeout(() => setCnfPopUpType(false), 3200);
+        }}
       >
         <svg
           width="19"

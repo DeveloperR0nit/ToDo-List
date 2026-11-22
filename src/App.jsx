@@ -9,6 +9,7 @@ import TaskModal from "./components/TaskModal";
 import StatusFilterSm from "./components/StatusFilterSm";
 import DeleteModal from "./components/DeleteModal";
 import CnfPopUp from "./components/CnfPopUp";
+import Confetti from "react-confetti";
 import { TaskContext } from "./components/TaskContext";
 
 export default function App() {
@@ -70,6 +71,15 @@ export default function App() {
     localStorage.setItem("tasks", JSON.stringify(newData));
     setData(JSON.parse(localStorage.getItem("tasks")));
   }
+  if (cnfPopUpType == "completed") {
+    if (
+      statsObj.allTasksList.length > 0 &&
+      statsObj.allTasksList.length === statsObj.completedTasksList.length
+    ) {
+      setCnfPopUpType("completed-all");
+    }
+    setTimeout(() => setCnfPopUpType(false), 3200);
+  }
   return (
     <TaskContext.Provider
       value={{
@@ -91,6 +101,22 @@ export default function App() {
         setTheme,
       }}
     >
+      {cnfPopUpType === "completed-all" && (
+        <Confetti
+          width={window.innerWidth}
+          height={window.innerHeight}
+          recycle={false}
+          numberOfPieces={300}
+          gravity={0.3}
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            zIndex: 9999,
+            pointerEvents: "none",
+          }}
+        />
+      )}
       <TaskModal
         isOpen={isOpenModal}
         closeModal={() => setIsOpenModal(false)}

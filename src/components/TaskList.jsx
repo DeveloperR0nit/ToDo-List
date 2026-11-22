@@ -16,13 +16,17 @@ export default function Tasklist() {
     statsObj,
     searchFilter,
     setIsOpenDeleteModal,
-    theme
+    theme,
+    setCnfPopUpType,
   } = useContext(TaskContext);
   function handleColmpletedCheck(e, id) {
     const updatedData = data.map((task) =>
-      task.id === id ? { ...task, isCompleted: e.target.checked } : task,
+      task.id === id ? { ...task, isCompleted: e.currentTarget.checked } : task,
     );
     setNewData(updatedData);
+    if (e.currentTarget.checked) {
+      setCnfPopUpType("completed");
+    }
   }
   function getDueStatusSmall(dueDate, isCompleted) {
     const today = new Date();
